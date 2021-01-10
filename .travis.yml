@@ -14,8 +14,7 @@ before_install:
   - gcloud config set project multi-k8s-301315
   - gcloud config set compute/zone europe-north1-a
   - gcloud container clusters get-credentials multi-cluster
-  - docker logout
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u erikflogvall --password-stdin
   - docker build -t erikflogvall/react-test -f ./client/DockerFile.dev ./client
 
 script:
